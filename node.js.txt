@@ -1,0 +1,76 @@
+ node.js:
+是js的运行时的环境，
+以前js只能在浏览器解析，现在node.js提供解析js的环境，
+可以完全脱离浏览器运行
+
+浏览器javascript:
+EcmaScrip---> 基本语法   if  var function  object  array
+BOM 
+DOM
+
+node.js 中的javascript：
+没有BOM   DOM（不操作页面）
+ECMAScript
+在node这个JavaScript执行环境中提供服务器级别操作的api：
+例如文件读写
+网络服务的搭建
+网络通信
+http服务器等处理
+
+node.js 构建与chrome的v8引擎之上
+
+node.js:特性：
+事件驱动
+非阻塞io模型（异步操作）
+轻量  高效
+
+npm基于node.js的最大的快源库生态系统
+绝大多数的JavaScript相关的包都存放在npm上，方便开发人员下载使用
+
+
+node.js 能做什么：
+web服务器后台
+命令行工具 
+npm (node) 
+git (C语言)
+hexo(node)
+
+对于前端开发工程师来讲  node最多还是命令行工具
+npm   webpack  gulp
+
+node.js能学到什么：
+1
+B/S编程模型：Browser -- Serve,
+node 只是我们学习B/S模型的一个工具而已
+2
+模块化编程（requireJS）
+以前认知  JavaScript只能通过scrip标签来加载
+在node可以像 @import()一样来引用加载JavaScript脚本文件
+3
+Node常用的api   文件操作  http文件构建
+4
+异步编程
+回调函数
+Promise
+async
+generator
+5
+ECMAScript  只是一个新的语法而已
+
+
+实战：
+const fs=require('fs');
+fs.readFile(路径，function(){})
+fs.writeFile(路径，内容，function(){})
+
+const http=require('http');
+var serve=http.createServer();
+serve.on('request',function(req,res){
+console.log('收到客户端请求'+req.url);
+res.write('hello');
+res.end();
+});
+//绑定端口号   启动服务器
+serve.listen(3000,function(){
+	console.log('服务器启动成功了，可以通过 http://127.0.0.1或者http://localhost')
+})
